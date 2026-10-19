@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#E31937">
+<title>Tesla Scholars — Accelerate the World's Transition</title>
+<meta name="description" content="The Tesla Scholars Program: $50,000, four disciplines, zero strings. Apply for the 2026 cohort.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS — RED / WHITE ============ */
+:root{
+  --ink:#171A20; --paper:#F7F7F8; --white:#FFFFFF;
+  --gray:#63666C; --line:rgba(23,26,32,.12);
+  --red:#E31937; --red-d:#C8102E; --tint:#FDEFF1; --tint2:#FBE3E8;
+  --fd:'Archivo',sans-serif; --fb:'Instrument Sans',sans-serif; --fm:'JetBrains Mono',monospace;
+  --ease:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);font-size:16px;line-height:1.6;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--red);color:#fff}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+section[id],header[id]{scroll-margin-top:72px}
+.wrap{width:min(1200px,92vw);margin:0 auto}
+section{position:relative}
+.kicker{font:500 11px/1 var(--fm);letter-spacing:.32em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--red)}
+h1,h2,h3{font-family:var(--fd);font-stretch:120%;text-transform:uppercase;letter-spacing:.005em;line-height:.98}
+.h2{font-size:clamp(34px,5vw,62px);font-weight:800;margin:18px 0 22px}
+.lead{color:var(--gray);max-width:56ch;font-size:17px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:6px;border:1px solid transparent;
+  font:600 12px/1 var(--fd);letter-spacing:.16em;text-transform:uppercase;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
+.btn-ghost{border-color:rgba(23,26,32,.28);color:var(--ink)}.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+.btn-sm{padding:10px 20px;font-size:11px}
+.mono{font-family:var(--fm)}
+
+/* ============ MOTION ============ */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s var(--ease);transition-delay:var(--d,0s)}
+[data-reveal].in{opacity:1;transform:none}
+.mask{display:block;overflow:hidden}
+.mask>span{display:block;transform:translateY(115%);transition:transform 1s var(--ease);transition-delay:var(--d,0s)}
+.in .mask>span,.mask.in>span{transform:none}
+@keyframes tick{to{transform:translateX(-50%)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(227,25,55,.45)}50%{box-shadow:0 0 0 8px rgba(227,25,55,0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes stepIn{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ============ NAV ============ */
+.nav{position:fixed;inset:0 0 auto;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(16px,3vw,36px);background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--ink);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 1px 0 var(--line),0 8px 30px rgba(23,26,32,.05)}
+.wordmark{font:700 15px var(--fd);font-stretch:125%;letter-spacing:.34em;text-transform:uppercase;display:flex;align-items:center;gap:2px;white-space:nowrap}
+.wordmark b{color:var(--red)}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{font:500 11px var(--fm);letter-spacing:.22em;text-transform:uppercase;color:var(--gray);transition:.25s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--red);transition:width .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+
+/* ============ HERO ============ */
+.hero{background:var(--white);padding-top:64px;overflow:hidden}
+.hero-inner{padding-top:clamp(56px,8vw,100px)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero-kicker{font:500 11px var(--fm);letter-spacing:.34em;color:var(--red);display:flex;gap:14px;align-items:center;margin-bottom:26px}
+.hero-kicker::before{content:"";width:34px;height:2px;background:var(--red)}
+.hero h1{font-size:clamp(44px,8.4vw,118px);font-weight:850;font-stretch:122%;color:var(--ink)}
+.hero h1 .rd{color:var(--red)}
+.hero h1 .scr{white-space:nowrap}
+.hero-sub{margin:26px 0 34px;max-width:48ch;color:var(--gray);font-size:clamp(15px,1.4vw,18px)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-note{font:500 10px var(--fm);letter-spacing:.18em;color:var(--gray)}
+
+/* scholarship ticket */
+.ticket{background:#fff;border:2px solid var(--red);border-radius:6px;padding:28px 26px;transform:rotate(-3deg);
+  box-shadow:0 30px 70px rgba(227,25,55,.13);transition:transform .6s var(--ease),box-shadow .6s;position:relative;max-width:360px;justify-self:center;width:100%}
+.ticket:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 36px 80px rgba(227,25,55,.18)}
+.ticket-top{display:flex;justify-content:space-between;align-items:center;font:700 10px var(--fm);letter-spacing:.18em;color:var(--red);padding-bottom:18px}
+.ticket-top .yr{border:1px solid var(--red);padding:4px 8px;border-radius:3px}
+.ticket-award{font:850 clamp(44px,5.5vw,66px)/1 var(--fd);font-stretch:124%;color:var(--red);letter-spacing:-.02em}
+.ticket-award span{font-size:.6em;vertical-align:top;margin-right:2px}
+.ticket-label{font:500 9px var(--fm);letter-spacing:.22em;color:var(--gray);margin-top:10px}
+.ticket-perf{position:relative;border-top:2px dashed var(--tint2);margin:24px -26px}
+.ticket-perf::before,.ticket-perf::after{content:"";position:absolute;top:-9px;width:16px;height:16px;border:2px solid var(--red);background:#fff;border-radius:50%}
+.ticket-perf::before{left:-9px}.ticket-perf::after{right:-9px}
+.ticket-rows{display:flex;flex-direction:column;gap:12px}
+.ticket-rows>div{display:flex;justify-content:space-between;font-size:13px}
+.ticket-rows span{color:var(--gray)}
+.ticket-rows b{font-weight:600}
+.ticket-bar{height:30px;margin-top:24px;background:repeating-linear-gradient(90deg,var(--red) 0 2px,transparent 2px 5px,var(--red) 5px 6px,transparent 6px 11px,var(--red) 11px 15px,transparent 15px 18px);opacity:.85}
+.ticket-foot{text-align:center;font:500 9px var(--fm);letter-spacing:.3em;color:var(--red);margin-top:12px}
+
+/* spec strip */
+.spec-strip{margin-top:clamp(48px,7vw,84px);border-top:2px solid var(--red);display:grid;grid-template-columns:repeat(4,1fr)}
+.spec{padding:26px clamp(12px,2.5vw,34px);border-left:1px solid var(--line)}
+.spec:first-child{border-left:0;padding-left:0}
+.spec .lbl{font:500 10px var(--fm);letter-spacing:.28em;color:var(--gray);margin-bottom:8px}
+.spec .val{font:750 clamp(19px,2.4vw,30px)/1 var(--fd);font-stretch:118%;letter-spacing:.01em}
+.spec .val.cd{font-family:var(--fm);font-weight:700;font-size:clamp(15px,1.9vw,23px);color:var(--red);font-variant-numeric:tabular-nums;white-space:nowrap}
+.spec .val .u{color:var(--gray);font-size:.7em}
+
+/* ============ TICKER ============ */
+.ticker{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;align-items:center;animation:tick 34s linear infinite;padding:16px 0}
+.ticker span{font:500 11px var(--fm);letter-spacing:.34em;padding:0 30px}
+.ticker i{font-style:normal;font-size:9px;opacity:.7}
+
+/* ============ PROGRAM ============ */
+.program{padding:clamp(90px,12vw,150px) 0}
+.program .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(40px,7vw,100px)}
+.sticky{position:sticky;top:110px;align-self:start}
+.p-card{border-top:1px solid var(--line);padding:40px 0;display:grid;grid-template-columns:56px 1fr;gap:24px;transition:padding-left .4s var(--ease)}
+.p-card:last-child{border-bottom:1px solid var(--line)}
+.p-card:hover{padding-left:8px}
+.p-num{font:700 13px var(--fm);color:var(--red);letter-spacing:.1em}
+.p-card h3{font-size:clamp(20px,2.4vw,28px);font-weight:750;margin-bottom:12px}
+.p-card p{color:var(--gray);font-size:15px;max-width:52ch}
+.p-metric{display:inline-block;margin-top:16px;font:700 10px var(--fm);letter-spacing:.18em;color:var(--red);background:var(--tint);padding:7px 12px;border-radius:3px}
+
+/* ============ TRACKS ============ */
+.tracks{padding:clamp(90px,12vw,150px) 0;background:var(--paper)}
+.tracks-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.tracks-hint{font:500 11px var(--fm);letter-spacing:.2em;color:var(--gray);max-width:260px;text-align:right}
+.track-row{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:24px;padding:34px 18px;border-top:1px solid var(--line);cursor:pointer;transition:background .3s,padding .4s var(--ease)}
+.track-row:last-of-type{border-bottom:1px solid var(--line)}
+.track-row:hover{background:var(--white);padding-left:28px}
+.t-num{font:500 13px var(--fm);color:var(--red)}
+.t-title{font:750 clamp(24px,4.4vw,52px)/1 var(--fd);font-stretch:120%;text-transform:uppercase;transition:color .3s,transform .4s var(--ease)}
+.track-row:hover .t-title{color:var(--red);transform:translateX(6px)}
+.t-desc{color:var(--gray);font-size:14px;margin-top:8px;max-width:60ch}
+.t-tags{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.t-tags span{font:500 10px var(--fm);letter-spacing:.16em;border:1px solid var(--line);padding:6px 12px;border-radius:20px;color:var(--gray);background:#fff}
+.t-arrow{font-size:26px;color:var(--red);transition:transform .3s}
+.track-row:hover .t-arrow{transform:translateX(8px)}
+
+/* ============ TIMELINE ============ */
+.timeline{background:var(--tint);padding:clamp(90px,12vw,140px) 0}
+.tl{position:relative;margin-top:70px;display:grid;grid-template-columns:repeat(5,1fr)}
+.tl-line{position:absolute;top:7px;left:10%;right:10%;height:2px;background:var(--tint2)}
+.tl-fill{position:absolute;top:0;left:0;height:100%;width:var(--pct,0%);background:var(--red);transition:width 1.6s var(--ease)}
+.tl-item{position:relative;text-align:center;padding:0 8px}
+.tl-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--tint2);background:var(--tint);margin:0 auto 18px;position:relative;z-index:2;transition:.4s}
+.tl-item.past .tl-dot,.tl-item.current .tl-dot{background:var(--red);border-color:var(--red)}
+.tl-item.current .tl-dot{animation:pulse 2s infinite}
+.tl-date{font:700 12px var(--fm);letter-spacing:.14em;color:var(--ink)}
+.tl-lbl{font:500 11px var(--fm);letter-spacing:.1em;color:var(--gray);margin-top:6px;text-transform:uppercase}
+
+/* ============ ELIGIBILITY ============ */
+.elig{padding:clamp(90px,12vw,150px) 0}
+.elig .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start}
+.elig-panel{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--red);border-radius:8px;padding:clamp(26px,3.5vw,44px)}
+.field{margin-bottom:26px}
+.field label{display:block;font:500 10px var(--fm);letter-spacing:.26em;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(23,26,32,.22);padding:11px 2px;font:400 16px var(--fb);color:var(--ink);border-radius:0;transition:border-color .3s}
+.field select{appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path d="M1 1l5 5 5-5" stroke="%23E31937" fill="none" stroke-width="1.6"/></svg>');background-repeat:no-repeat;background-position:right 4px center;cursor:pointer}
+.field textarea{resize:vertical;min-height:150px;line-height:1.6}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--red)}
+.field .msg{display:none;font:500 11px var(--fm);color:var(--red);margin-top:8px;letter-spacing:.06em}
+.field.error input,.field.error textarea{border-bottom-color:var(--red)}
+.field.error .msg{display:block}
+.verdict{margin-top:8px;border-top:1px solid var(--line);padding-top:24px;min-height:118px}
+.v-big{font:800 clamp(22px,2.6vw,30px)/1.05 var(--fd);font-stretch:120%;text-transform:uppercase}
+.v-big.ok{color:var(--red)}
+.v-sub{color:var(--gray);font-size:14px;margin:10px 0 16px}
+.chip{display:inline-block;font:700 10px var(--fm);letter-spacing:.2em;border:1px solid var(--red);color:var(--red);padding:7px 14px;border-radius:20px;margin:0 8px 8px 0}
+
+/* ============ STATS ============ */
+.stats{background:var(--red);color:#fff;padding:clamp(60px,8vw,96px) 0}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.stat .n{font:850 clamp(38px,5.6vw,76px)/1 var(--fd);font-stretch:124%;font-variant-numeric:tabular-nums}
+.stat .l{font:500 11px var(--fm);letter-spacing:.26em;text-transform:uppercase;opacity:.9;margin-top:12px}
+.stat{border-left:1px solid rgba(255,255,255,.35);padding-left:26px}
+
+/* ============ SCHOLARS (typographic postcards) ============ */
+.scholars{padding:clamp(90px,12vw,150px) 0 clamp(110px,12vw,160px);overflow:hidden}
+.cards{display:flex;justify-content:center;gap:0;margin-top:70px;flex-wrap:wrap}
+.postcard{background:#fff;border:1px solid var(--line);padding:30px 28px 26px;width:320px;box-shadow:0 18px 44px rgba(23,26,32,.07);transition:transform .55s var(--ease),box-shadow .55s;position:relative}
+.postcard:nth-child(1){transform:rotate(-3deg) translateY(12px)}
+.postcard:nth-child(2){transform:rotate(2deg) translateY(-8px);z-index:2;margin:0 -18px}
+.postcard:nth-child(3){transform:rotate(-1.5deg) translateY(16px)}
+.postcard:hover{transform:rotate(0) translateY(-12px);box-shadow:0 30px 60px rgba(227,25,55,.16);z-index:5;border-color:var(--tint2)}
+.postcard .quote-mark{font:850 70px/.6 var(--fd);color:var(--red);display:block;height:48px}
+.postcard q{display:block;font-size:16px;line-height:1.6;margin:14px 0 22px;color:var(--ink);quotes:none}
+.postcard .who{font:700 10px var(--fm);letter-spacing:.16em;text-transform:uppercase;color:var(--gray);border-top:1px solid var(--line);padding-top:16px}
+.postcard .who b{color:var(--red)}
+.postcard .stamp{position:absolute;top:24px;right:24px;font:700 9px var(--fm);letter-spacing:.12em;color:var(--red);border:1px solid var(--red);padding:5px 8px;border-radius:3px;transform:rotate(6deg)}
+
+/* ============ APPLY ============ */
+.apply{padding:clamp(90px,12vw,150px) 0;background:var(--paper)}
+.apply .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,90px);align-items:start}
+.check-list{list-style:none;margin:28px 0;border-top:1px solid var(--line)}
+.check-list li{padding:15px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:14px;align-items:center;color:var(--ink)}
+.check-list li::before{content:"—";color:var(--red);font-family:var(--fm)}
+.mini-cd{display:flex;gap:24px;margin:26px 0;flex-wrap:wrap}
+.mini-cd .v{font:750 28px var(--fd);font-stretch:118%;font-variant-numeric:tabular-nums;color:var(--red)}
+.mini-cd .k{font:500 9px var(--fm);letter-spacing:.28em;color:var(--gray)}
+.status-pill{display:inline-flex;align-items:center;gap:10px;font:700 10px var(--fm);letter-spacing:.22em;border:1px solid var(--red);color:var(--red);padding:8px 16px;border-radius:20px;margin-top:18px}
+.status-pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 2s infinite}
+.form-panel{background:#fff;border:1px solid var(--line);border-top:3px solid var(--red);border-radius:8px;padding:clamp(26px,3.5vw,46px);box-shadow:0 24px 60px rgba(23,26,32,.06)}
+.seg-row{display:flex;gap:6px;margin-bottom:10px}
+.seg{height:3px;flex:1;background:var(--tint2);border-radius:2px;transition:background .5s}
+.seg.on{background:var(--red)}
+.seg-lbls{display:flex;justify-content:space-between;font:500 9px var(--fm);letter-spacing:.18em;color:var(--gray);margin-bottom:36px;text-transform:uppercase}
+.step{display:none}
+.step.active{display:block;animation:stepIn .5s var(--ease)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+.form-nav{display:flex;justify-content:space-between;margin-top:36px;gap:14px}
+.btn-back{background:none;border:none;font:600 12px var(--fd);letter-spacing:.16em;text-transform:uppercase;color:var(--gray);padding:15px 6px;transition:color .25s}
+.btn-back:hover{color:var(--red)}
+.count{font:500 11px var(--fm);letter-spacing:.08em;color:var(--gray);text-align:right;margin-top:8px}
+.count.bad{color:var(--red)}.count.good{color:#1a8f4a}
+.review{border-top:1px solid var(--line)}
+.review div{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}
+.review dt{font:500 10px var(--fm);letter-spacing:.2em;color:var(--gray);text-transform:uppercase;padding-top:3px;flex:none}
+.review dd{font-weight:600;text-align:right;max-width:62%;word-break:break-word}
+.consent{display:flex;gap:12px;align-items:flex-start;margin-top:24px;font-size:13.5px;color:var(--gray)}
+.consent input{accent-color:var(--red);margin-top:3px;width:16px;height:16px;flex:none}
+.success{display:none;text-align:center;padding:30px 10px}
+.success.show{display:block}
+.success svg{margin:0 auto 26px}
+.success .ck-c{stroke-dasharray:265;stroke-dashoffset:265;animation:draw 1s var(--ease) forwards .15s}
+.success .ck-p{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .6s var(--ease) forwards .8s}
+.success h3{font-size:clamp(24px,3vw,34px);margin-bottom:14px}
+.app-id{font:700 clamp(20px,2.6vw,30px) var(--fm);letter-spacing:.12em;color:var(--red);margin:18px 0 8px}
+.success p{color:var(--gray);font-size:14.5px;max-width:42ch;margin:18px auto 0}
+.btn-loading{position:relative;color:transparent!important;pointer-events:none}
+.btn-loading::after{content:"";position:absolute;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+
+/* ============ FAQ ============ */
+.faq{padding:clamp(90px,12vw,150px) 0}
+.faq-list{margin-top:50px;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 4px;text-align:left;font:700 clamp(16px,1.8vw,20px)/1.2 var(--fd);font-stretch:112%;text-transform:uppercase;color:var(--ink);transition:color .25s}
+.faq-q:hover{color:var(--red)}
+.faq-q .ic{font-family:var(--fm);font-size:20px;color:var(--red);transition:transform .45s var(--ease);flex:none}
+.faq-item.open .ic{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a>div{overflow:hidden}
+.faq-a p{color:var(--gray);font-size:15px;max-width:64ch;padding:0 4px 28px}
+
+/* ============ FOOTER ============ */
+footer{background:var(--red);color:#fff;padding:clamp(80px,10vw,120px) 0 40px;overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.3)}
+.foot-grid h4{font:500 10px var(--fm);letter-spacing:.3em;color:rgba(255,255,255,.7);text-transform:uppercase;margin-bottom:20px}
+.foot-grid a,.foot-grid p{display:block;color:rgba(255,255,255,.9);font-size:14px;margin-bottom:10px;transition:color .25s}
+.foot-grid a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:30px;font:500 10px var(--fm);letter-spacing:.18em;color:rgba(255,255,255,.75);text-transform:uppercase}
+
+/* ============ TOAST ============ */
+.toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,80px);z-index:150;background:var(--ink);color:#fff;font:500 11px var(--fm);letter-spacing:.16em;padding:15px 26px;border-left:3px solid var(--red);opacity:0;transition:.5s var(--ease);pointer-events:none;text-transform:uppercase;max-width:92vw;text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:960px){
+  .nav-links{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .ticket{max-width:420px;width:100%;justify-self:center;margin-left:0}
+  .program .grid,.elig .grid,.apply .grid{grid-template-columns:1fr}
+  .sticky{position:static}
+  .spec-strip{grid-template-columns:1fr 1fr}
+  .spec:nth-child(3){border-left:0;padding-left:0}
+  .spec:nth-child(even){padding-left:24px}
+  .stats .grid{grid-template-columns:1fr 1fr;gap:44px 24px}
+  .stat:nth-child(odd){border-left:0;padding-left:0}
+  .tl{grid-template-columns:1fr;gap:0;padding-left:22px}
+  .tl-line{left:7px;right:auto;top:8px;bottom:8px;width:2px;height:auto}
+  .tl-fill{width:100%;height:var(--pct,0%);transition:height 1.6s var(--ease)}
+  .tl-item{display:grid;grid-template-columns:40px 1fr;text-align:left;align-items:baseline;padding:16px 0}
+  .tl-dot{margin:0;grid-row:1/3}
+  .tl-lbl{margin:2px 0 0}
+  .f-row{grid-template-columns:1fr}
+  .track-row{grid-template-columns:40px 1fr auto;gap:16px;padding:28px 8px}
+  .postcard{margin:20px 0!important;transform:none!important}
+}
+@media(max-width:600px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .wordmark{letter-spacing:.22em;font-size:13px}
+  .hero h1{font-size:clamp(40px,11vw,60px)}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .hero-note{width:100%;text-align:center}
+  .tracks-hint{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .ticker-track{animation:none}
+  [data-reveal]{opacity:1;transform:none}
+  .mask>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="wordmark" href="#home">TESLA<b>·</b>SCHOLARS</a>
+  <ul class="nav-links">
+    <li><a href="#program">Program</a></li>
+    <li><a href="#tracks">Tracks</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#scholars">Alumni</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#apply" class="btn btn-red btn-sm">Apply</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="wrap hero-inner in">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-kicker mask"><span>Tesla Scholars Program — 2026 Cohort</span></div>
+        <h1>
+          <span class="mask" style="--d:.08s"><span>Accelerate</span></span>
+          <span class="mask" style="--d:.18s"><span>the world's</span></span>
+          <span class="mask" style="--d:.28s"><span><span class="scr" data-text="TRANSITION">TRANSITION</span><span class="rd">.</span></span></span>
+        </h1>
+        <p class="hero-sub" data-reveal style="--d:.5s">$50,000. Four disciplines. Zero strings attached. We fund the people who build what comes next — then we put them in the room with the people already building it.</p>
+        <div class="hero-cta" data-reveal style="--d:.62s">
+          <a href="#apply" class="btn btn-red">Apply now</a>
+          <a href="#eligibility" class="btn btn-ghost">Check eligibility</a>
+          <span class="hero-note">NO FEE · NO REPAYMENT · 8 MINUTES</span>
+        </div>
+      </div>
+
+      <aside class="ticket" data-reveal style="--d:.4s" aria-label="Scholarship award summary">
+        <div class="ticket-top"><span>TESLA·SCHOLARS</span><span class="yr">2026</span></div>
+        <div class="ticket-award"><span>$</span>50,000</div>
+        <div class="ticket-label">AWARD PER SCHOLAR · NO REPAYMENT</div>
+        <div class="ticket-perf"></div>
+        <div class="ticket-rows">
+          <div><span>Cohort</span><b>40 scholars</b></div>
+          <div><span>Tracks</span><b>04 disciplines</b></div>
+          <div><span>Commitment</span><b>Zero strings</b></div>
+        </div>
+        <div class="ticket-bar" aria-hidden="true"></div>
+        <div class="ticket-foot">ADMIT ONE FUTURE — TS/26</div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="spec-strip">
+      <div class="spec"><div class="lbl">AWARD</div><div class="val">$50,000</div></div>
+      <div class="spec"><div class="lbl">COHORT</div><div class="val">40 SCHOLARS</div></div>
+      <div class="spec"><div class="lbl">TRACKS</div><div class="val">04</div></div>
+      <div class="spec"><div class="lbl">DEADLINE — MAR 01</div><div class="val cd cd-wrap"><span data-cd="d">--</span><span class="u">d</span> <span data-cd="h">--</span><span class="u">h</span> <span data-cd="m">--</span><span class="u">m</span> <span data-cd="s">--</span><span class="u">s</span></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>ENGINEERING</span><i>◆</i><span>ENERGY</span><i>◆</i><span>SOFTWARE</span><i>◆</i><span>DESIGN</span><i>◆</i><span>$50,000 PER SCHOLAR</span><i>◆</i><span>40 SEATS</span><i>◆</i><span>DEADLINE MAR 01</span><i>◆</i><span>NO REPAYMENT</span><i>◆</i>
+    <span>ENGINEERING</span><i>◆</i><span>ENERGY</span><i>◆</i><span>SOFTWARE</span><i>◆</i><span>DESIGN</span><i>◆</i><span>$50,000 PER SCHOLAR</span><i>◆</i><span>40 SEATS</span><i>◆</i><span>DEADLINE MAR 01</span><i>◆</i><span>NO REPAYMENT</span><i>◆</i>
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<section class="program" id="program">
+  <div class="wrap grid">
+    <div class="sticky" data-reveal>
+      <div class="kicker">The Program</div>
+      <h2 class="h2">Built for the<br>people who<br>build.</h2>
+      <p class="lead">Most scholarships reward a transcript. This one funds a trajectory. Scholars receive capital, access, and a cohort of peers who treat "impossible" as a starting condition — not an answer.</p>
+      <br>
+      <a href="#scholars" class="btn btn-ghost">Meet the alumni</a>
+    </div>
+    <div>
+      <article class="p-card" data-reveal>
+        <div class="p-num">01</div>
+        <div>
+          <h3>The grant</h3>
+          <p>$50,000 disbursed as $12,500 per academic year, for four years. Tuition, housing, parts, compute — spend it on what moves you forward. No repayment. No equity. No reporting theater.</p>
+          <span class="p-metric">$12,500 / YEAR · 4 YEARS</span>
+        </div>
+      </article>
+      <article class="p-card" data-reveal style="--d:.1s">
+        <div class="p-num">02</div>
+        <div>
+          <h3>The mentorship</h3>
+          <p>Every scholar is paired 1:1 with a practicing engineer, designer, or researcher. Monthly calls, factory walk-throughs, and honest feedback on the work — the kind you can't get from a syllabus.</p>
+          <span class="p-metric">1:1 MENTOR · MONTHLY CALLS</span>
+        </div>
+      </article>
+      <article class="p-card" data-reveal style="--d:.15s">
+        <div class="p-num">03</div>
+        <div>
+          <h3>The network</h3>
+          <p>160 alumni across Fremont, Berlin, Shanghai, and Austin — and a standing invitation to demo days, internships, and the annual build week. The cohort is the compounding asset.</p>
+          <span class="p-metric">160 ALUMNI · 38 COUNTRIES</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS -->
+<section class="tracks" id="tracks">
+  <div class="wrap">
+    <div class="tracks-head" data-reveal>
+      <div>
+        <div class="kicker">Disciplines</div>
+        <h2 class="h2">Four ways to<br>build the future.</h2>
+      </div>
+      <p class="tracks-hint">SELECT A TRACK — IT PRE-FILLS YOUR APPLICATION ↓</p>
+    </div>
+    <div class="track-list" data-reveal style="--d:.15s">
+      <div class="track-row" tabindex="0" role="button" data-track="Vehicle Engineering">
+        <div class="t-num">01</div>
+        <div>
+          <div class="t-title">Vehicle Engineering</div>
+          <div class="t-desc">Powertrain, chassis, materials, manufacturing. For people who think in torque curves and cycle times.</div>
+          <div class="t-tags"><span>MECHANICAL</span><span>MANUFACTURING</span><span>MATERIALS</span></div>
+        </div>
+        <div class="t-arrow">→</div>
+      </div>
+      <div class="track-row" tabindex="0" role="button" data-track="Energy Systems">
+        <div class="t-num">02</div>
+        <div>
+          <div class="t-title">Energy Systems</div>
+          <div class="t-desc">Cells, packs, solar, grid storage. For people who want to rewire how the planet gets its power.</div>
+          <div class="t-tags"><span>ELECTRICAL</span><span>STORAGE</span><span>GRID</span></div>
+        </div>
+        <div class="t-arrow">→</div>
+      </div>
+      <div class="track-row" tabindex="0" role="button" data-track="Software & AI">
+        <div class="t-num">03</div>
+        <div>
+          <div class="t-title">Software &amp; AI</div>
+          <div class="t-desc">Autonomy, firmware, machine learning. For people who ship code that touches the physical world.</div>
+          <div class="t-tags"><span>ML</span><span>FIRMWARE</span><span>AUTONOMY</span></div>
+        </div>
+        <div class="t-arrow">→</div>
+      </div>
+      <div class="track-row" tabindex="0" role="button" data-track="Industrial Design">
+        <div class="t-num">04</div>
+        <div>
+          <div class="t-title">Industrial Design</div>
+          <div class="t-desc">Form, interface, human factors. For people who believe beauty and engineering are the same discipline.</div>
+          <div class="t-tags"><span>FORM</span><span>UX</span><span>PROTOTYPING</span></div>
+        </div>
+        <div class="t-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline" id="timeline">
+  <div class="wrap">
+    <div data-reveal>
+      <div class="kicker">The Cycle</div>
+      <h2 class="h2">From application to cohort.</h2>
+    </div>
+    <div class="tl" id="tl" data-reveal style="--d:.15s">
+      <div class="tl-line"><div class="tl-fill"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="elig" id="eligibility">
+  <div class="wrap grid">
+    <div data-reveal>
+      <div class="kicker">Eligibility</div>
+      <h2 class="h2">Thirty seconds<br>to find out.</h2>
+      <p class="lead">No transcripts to upload, no essays to draft — just three questions. If you qualify, we'll point you straight at the application with your track already selected.</p>
+      <br>
+      <p class="lead" style="font-size:14px;font-family:var(--fm);letter-spacing:.04em">WE OPTIMIZE FOR TRAJECTORY,<br>NOT PEDIGREE.</p>
+    </div>
+    <div class="elig-panel" data-reveal style="--d:.12s">
+      <div class="field">
+        <label for="sel-status">Current status</label>
+        <select id="sel-status">
+          <option value="">Select…</option>
+          <option value="enrolled">Enrolled in a degree program</option>
+          <option value="admitted">Admitted, starting next term</option>
+          <option value="planning">Planning to enroll within 12 months</option>
+          <option value="unsure">Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="sel-level">Level of study</label>
+        <select id="sel-level">
+          <option value="">Select…</option>
+          <option value="hs">High-school senior</option>
+          <option value="ug">Undergraduate</option>
+          <option value="grad">Graduate</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="sel-field">Field of interest</label>
+        <select id="sel-field">
+          <option value="">Select…</option>
+          <option>Vehicle Engineering</option>
+          <option>Energy Systems</option>
+          <option>Software & AI</option>
+          <option>Industrial Design</option>
+          <option value="undecided">Undecided — all of it</option>
+        </select>
+      </div>
+      <div class="verdict" id="elig-out">
+        <div class="v-big" style="color:var(--gray)">Awaiting answers.</div>
+        <div class="v-sub">All three fields required for a verdict.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Program statistics">
+  <div class="wrap grid">
+    <div class="stat" data-reveal><div class="n"><span data-count="2.4" data-dec="1" data-prefix="$" data-suffix="M">$0M</span></div><div class="l">Awarded to date</div></div>
+    <div class="stat" data-reveal style="--d:.08s"><div class="n"><span data-count="160">0</span></div><div class="l">Alumni worldwide</div></div>
+    <div class="stat" data-reveal style="--d:.16s"><div class="n"><span data-count="38">0</span></div><div class="l">Countries represented</div></div>
+    <div class="stat" data-reveal style="--d:.24s"><div class="n"><span data-count="100" data-suffix="%">0%</span></div><div class="l">Graduate to completion</div></div>
+  </div>
+</section>
+
+<!-- SCHOLARS -->
+<section class="scholars" id="scholars">
+  <div class="wrap">
+    <div style="text-align:center" data-reveal>
+      <div class="kicker" style="justify-content:center">Alumni</div>
+      <h2 class="h2">In their words.</h2>
+    </div>
+    <div class="cards">
+      <figure class="postcard" data-reveal>
+        <span class="stamp">TS·24</span>
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <q>They funded my battery research before anyone else believed in it. Now it's in a pilot grid.</q>
+        <figcaption class="who">Maya Okafor — <b>Energy Systems</b> · '24</figcaption>
+      </figure>
+      <figure class="postcard" data-reveal style="--d:.1s">
+        <span class="stamp">TS·23</span>
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <q>I toured the chassis line at twenty. My mentor sketched a fix on a napkin. I kept the napkin — and the job.</q>
+        <figcaption class="who">Dario Lindqvist — <b>Vehicle Eng.</b> · '23</figcaption>
+      </figure>
+      <figure class="postcard" data-reveal style="--d:.2s">
+        <span class="stamp">TS·25</span>
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <q>The mentors answer. Every single time. That alone is worth more than the grant.</q>
+        <figcaption class="who">Priya Raman — <b>Software &amp; AI</b> · '25</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply" id="apply">
+  <div class="wrap grid">
+    <div data-reveal>
+      <div class="kicker">Application</div>
+      <h2 class="h2">Ready when<br>you are.</h2>
+      <p class="lead">Four short steps. We read every word ourselves — no keyword filters, no legacy preference.</p>
+      <ul class="check-list">
+        <li>Your name and a working email</li>
+        <li>School, field, and GPA (unweighted, 4.0)</li>
+        <li>One essay, under 2,000 characters</li>
+      </ul>
+      <div style="font:500 10px var(--fm);letter-spacing:.28em;color:var(--gray)">TIME REMAINING</div>
+      <div class="mini-cd cd-wrap">
+        <div><div class="v" data-cd="d">--</div><div class="k">DAYS</div></div>
+        <div><div class="v" data-cd="h">--</div><div class="k">HRS</div></div>
+        <div><div class="v" data-cd="m">--</div><div class="k">MIN</div></div>
+        <div><div class="v" data-cd="s">--</div><div class="k">SEC</div></div>
+      </div>
+      <div class="status-pill" id="app-status" hidden>ON FILE</div>
+    </div>
+
+    <div class="form-panel" data-reveal style="--d:.12s">
+      <div id="form-ui">
+        <div class="seg-row"><div class="seg on"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+        <div class="seg-lbls"><span>01 You</span><span>02 Education</span><span>03 Essay</span><span>04 Review</span></div>
+
+        <form id="app-form" novalidate>
+          <div class="step active" data-step="1">
+            <div class="field" id="f-name"><label for="i-name">Full name</label><input id="i-name" type="text" autocomplete="name" placeholder="Your full name"><div class="msg">Enter your full name.</div></div>
+            <div class="f-row">
+              <div class="field" id="f-email"><label for="i-email">Email</label><input id="i-email" type="email" autocomplete="email" placeholder="you@future.edu"><div class="msg">Enter a valid email.</div></div>
+              <div class="field"><label for="i-country">Country</label><input id="i-country" type="text" placeholder="Any of 38+"></div>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="field" id="f-school"><label for="i-school">School / university</label><input id="i-school" type="text" placeholder="Where you build"><div class="msg">Enter your school.</div></div>
+            <div class="f-row">
+              <div class="field" id="f-track"><label for="i-track">Track</label>
+                <select id="i-track"><option value="">Select…</option><option>Vehicle Engineering</option><option>Energy Systems</option><option>Software & AI</option><option>Industrial Design</option></select>
+                <div class="msg">Choose a track.</div></div>
+              <div class="field" id="f-gpa"><label for="i-gpa">GPA (4.0 scale)</label><input id="i-gpa" type="number" step="0.01" min="0" max="4" placeholder="3.60"><div class="msg">0.00 – 4.00</div></div>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="field"><label for="i-prompt">Prompt</label>
+              <select id="i-prompt">
+                <option>A problem you can't stop solving</option>
+                <option>Design for a sustainable future</option>
+                <option>Build log: a thing you made</option>
+              </select></div>
+            <div class="field" id="f-essay"><label for="i-essay">Your essay</label>
+              <textarea id="i-essay" maxlength="2000" placeholder="Be specific. Be yours. Show us the work, not the résumé."></textarea>
+              <div class="msg">Minimum 200 characters.</div></div>
+            <div class="count" id="essay-count">0 / 200 MIN</div>
+          </div>
+
+          <div class="step" data-step="4">
+            <dl class="review" id="review-list"></dl>
+            <label class="consent" id="f-consent"><input type="checkbox" id="i-consent"><span>I confirm this information is accurate and consent to being contacted about my application.</span></label>
+            <div class="msg" id="consent-msg" style="display:none;color:var(--red);font:500 11px var(--fm);margin-top:8px">Consent required to submit.</div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn-back" id="btn-back" style="visibility:hidden">← Back</button>
+            <button type="button" class="btn btn-red" id="btn-next">Continue →</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="success" id="app-success" aria-live="polite">
+        <svg width="92" height="92" viewBox="0 0 92 92" fill="none">
+          <circle class="ck-c" cx="46" cy="46" r="42" stroke="#E31937" stroke-width="2.5"/>
+          <path class="ck-p" d="M29 47l12 12 23-25" stroke="#E31937" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Application received.</h3>
+        <div class="app-id" id="app-id">TS-26-000000</div>
+        <div class="status-pill">STATUS — IN REVIEW</div>
+        <p>A confirmation is on its way to <b id="succ-email">you</b>. Interviews begin in late March. Keep building in the meantime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap" style="max-width:900px">
+    <div data-reveal>
+      <div class="kicker">FAQ</div>
+      <h2 class="h2">Questions, answered.</h2>
+    </div>
+    <div class="faq-list" data-reveal style="--d:.12s">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Who can apply?<span class="ic">+</span></button>
+        <div class="faq-a"><div><p>Anyone 18 or older who is enrolled in — or admitted to — an accredited program, anywhere in the world. High-school seniors may apply if they will begin study by the following fall term.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What does the $50,000 cover?<span class="ic">+</span></button>
+        <div class="faq-a"><div><p>Anything that accelerates your education: tuition, housing, materials, lab time, compute, tools. It is paid directly to you in $12,500 installments each academic year.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Is the award renewable?<span class="ic">+</span></button>
+        <div class="faq-a"><div><p>Yes — four years, contingent on continued enrollment and good academic standing (GPA 3.0+). 100% of scholars so far have made it through.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Does Tesla get anything in return?<span class="ic">+</span></button>
+        <div class="faq-a"><div><p>No equity, no obligation, no employment requirement. Internships are available and encouraged, but entirely optional. The only expectation is that you build something worth building.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Can international students apply?<span class="ic">+</span></button>
+        <div class="faq-a"><div><p>Absolutely. The current community spans 38 countries, and payments are made in local currency where required.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What are reviewers looking for?<span class="ic">+</span></button>
+        <div class="faq-a"><div><p>Evidence of building: projects, prototypes, code, designs — anything that shows you already doing the work. The essay matters more than the GPA. Trajectory over pedigree.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><h4>Program</h4><a href="#program">About</a><a href="#tracks">Tracks</a><a href="#timeline">Timeline</a><a href="#apply">Apply</a></div>
+      <div><h4>Contact</h4><a href="mailto:hello@teslascholars.demo">hello@teslascholars.demo</a><p class="mono" style="font-size:12px;letter-spacing:.06em">AUSTIN · BERLIN<br>SHANGHAI · FREMONT</p></div>
+      <div><h4>Legal</h4><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Accessibility</a></div>
+      <div><h4>Deadline</h4><p class="mono" style="font-size:13px">MAR 01 · 11:59 PM<br>APPLICATIONS OPEN</p></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Tesla Scholars Program — a design concept. Not affiliated with Tesla, Inc.</span>
+      <span>30.2672° N / 97.7431° W</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+/* Nav + scrollspy */
+const nav = $('#nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+$('#year').textContent = new Date().getFullYear();
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) $$('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+}), {rootMargin:'-45% 0px -45% 0px'});
+['program','tracks','timeline','scholars','faq'].forEach(id => { const el = document.getElementById(id); if (el) spy.observe(el); });
+
+/* Countdown */
+function deadline(){
+  const now = new Date();
+  let d = new Date(now.getFullYear(), 2, 1, 23, 59, 59);
+  if (d < now) d = new Date(now.getFullYear() + 1, 2, 1, 23, 59, 59);
+  return d;
+}
+const DL = deadline();
+const pad = n => String(n).padStart(2,'0');
+function tickCd(){
+  const ms = Math.max(0, DL - Date.now());
+  const d = Math.floor(ms/864e5), h = pad(Math.floor(ms/36e5)%24), m = pad(Math.floor(ms/6e4)%60), s = pad(Math.floor(ms/1e3)%60);
+  $$('.cd-wrap').forEach(w => w.querySelectorAll('[data-cd]').forEach(el => el.textContent = ({d,h,m,s})[el.dataset.cd]));
+}
+tickCd(); setInterval(tickCd, 1000);
+
+/* Scramble decode */
+function scramble(el, delay){
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&<>/';
+  const fin = el.dataset.text;
+  if (RM){ el.textContent = fin; return; }
+  setTimeout(() => {
+    let f = 0;
+    (function run(){
+      f++; let out = '';
+      for (let i=0;i<fin.length;i++) out += (f/2.4 - i > 0) ? fin[i] : chars[Math.random()*chars.length|0];
+      el.textContent = out;
+      if (f < fin.length*2.4 + 8) requestAnimationFrame(run); else el.textContent = fin;
+    })();
+  }, delay);
+}
+$$('.scr').forEach((el,i) => scramble(el, 500 + i*300));
+
+/* Reveal */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold:.16});
+$$('[data-reveal]').forEach(el => io.observe(el));
+
+/* Count-up */
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, end = parseFloat(el.dataset.count), dec = +(el.dataset.dec||0), pre = el.dataset.prefix||'', suf = el.dataset.suffix||'';
+  cio.unobserve(el);
+  if (RM){ el.textContent = pre + end.toFixed(dec) + suf; return; }
+  const t0 = performance.now();
+  (function step(t){
+    const p = Math.min(1,(t-t0)/1600), v = end * (1 - Math.pow(1-p,3));
+    el.textContent = pre + v.toFixed(dec) + suf;
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}), {threshold:.5});
+$$('[data-count]').forEach(el => cio.observe(el));
+
+/* Timeline (CSS-variable driven, resize-safe) */
+(function(){
+  const now = new Date();
+  const baseY = now.getMonth() >= 7 ? now.getFullYear() : now.getFullYear() - 1;
+  const phases = [{m:7,d:12,l:'Applications open'},{m:0,d:15,l:'Essay workshops'},{m:2,d:1,l:'Deadline'},{m:3,d:10,l:'Interviews'},{m:4,d:20,l:'Cohort announced'}];
+  let y = baseY;
+  const dates = phases.map((p,i) => { if (i>0 && p.m < phases[i-1].m) y++; return new Date(y,p.m,p.d); });
+  const tl = $('#tl'), months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  dates.forEach((dt,i) => {
+    const state = dt < now ? (i === dates.filter(x=>x<now).length-1 ? 'current' : 'past') : 'future';
+    const item = document.createElement('div');
+    item.className = 'tl-item ' + state;
+    item.innerHTML = `<div class="tl-dot"></div><div class="tl-date">${months[dt.getMonth()]} ${pad(dt.getDate())} '${String(dt.getFullYear()).slice(2)}</div><div class="tl-lbl">${phases[i].l}</div>`;
+    tl.appendChild(item);
+  });
+  const pct = Math.min(1,Math.max(0,(now-dates[0])/(dates[4]-dates[0])))*100;
+  new IntersectionObserver((es,o)=>{ if(es[0].isIntersecting){ tl.style.setProperty('--pct',pct+'%'); o.disconnect(); }},{threshold:.3}).observe(tl);
+})();
+
+/* Toast + track selection */
+const toast = $('#toast'); let toastT;
+function showToast(msg){ toast.textContent=msg; toast.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>toast.classList.remove('on'),2400); }
+function pickTrack(name){
+  $('#i-track').value = name;
+  showToast(name + ' → added to your application');
+  document.getElementById('apply').scrollIntoView({behavior:RM?'auto':'smooth'});
+}
+$$('.track-row').forEach(r => {
+  r.addEventListener('click', ()=>pickTrack(r.dataset.track));
+  r.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();pickTrack(r.dataset.track);} });
+});
+
+/* Eligibility */
+const out = $('#elig-out');
+['sel-status','sel-level','sel-field'].forEach(id => $('#'+id).addEventListener('change',verdict));
+function verdict(){
+  const st=$('#sel-status').value, lv=$('#sel-level').value, fd=$('#sel-field').value;
+  if(!st||!lv||!fd){ out.innerHTML=`<div class="v-big" style="color:var(--gray)">Awaiting answers.</div><div class="v-sub">All three fields required for a verdict.</div>`; return; }
+  if(st==='unsure'){ out.innerHTML=`<div class="v-big" style="color:var(--gray)">Not quite — yet.</div><div class="v-sub">Enroll in (or get admitted to) an accredited program, then come straight back. We'll be here.</div><a class="btn btn-ghost btn-sm" href="#faq">Read the FAQ</a>`; return; }
+  const match = fd!=='undecided' ? `<span class="chip">TRACK MATCH — ${fd.toUpperCase()}</span>` : `<span class="chip">ALL 4 TRACKS OPEN</span>`;
+  out.innerHTML=`<div class="v-big ok">Eligible.</div><div class="v-sub">${lv==='hs'?'As a high-school senior, you qualify provided you begin study by next fall. ':''}Your profile clears every requirement. The application takes about eight minutes.</div>${match}<br><button class="btn btn-red btn-sm" id="elig-go" style="margin-top:14px">Start application →</button>`;
+  $('#elig-go').onclick=()=>{ if(fd!=='undecided') $('#i-track').value=fd;
+    document.getElementById('apply').scrollIntoView({behavior:RM?'auto':'smooth'});
+    showToast(fd!=='undecided'?fd+' → added to your application':'Application ready'); };
+}
+
+/* Multi-step form */
+let step=1;
+const steps=$$('.step'), segs=$$('.seg'), btnNext=$('#btn-next'), btnBack=$('#btn-back');
+function show(n){
+  step=n;
+  steps.forEach(s=>s.classList.toggle('active',+s.dataset.step===n));
+  segs.forEach((s,i)=>s.classList.toggle('on',i<n));
+  btnBack.style.visibility=n===1?'hidden':'visible';
+  btnNext.innerHTML=n===4?'Submit application':'Continue →';
+  if(n===4) buildReview();
+}
+function err(id,bad){ const f=document.getElementById(id); if(f) f.classList.toggle('error',bad); }
+function validate(n){
+  let ok=true;
+  const set=(id,bad)=>{ err(id,bad); if(bad) ok=false; };
+  if(n===1){
+    set('f-name',$('#i-name').value.trim().length<2);
+    set('f-email',!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test($('#i-email').value.trim()));
+  }
+  if(n===2){
+    set('f-school',$('#i-school').value.trim().length<2);
+    set('f-track',!$('#i-track').value);
+    const g=parseFloat($('#i-gpa').value);
+    set('f-gpa',!(g>=0&&g<=4));
+  }
+  if(n===3){ set('f-essay',$('#i-essay').value.trim().length<200); }
+  return ok;
+}
+function buildReview(){
+  const rows=[['Name',$('#i-name').value],['Email',$('#i-email').value],['School',$('#i-school').value],['Track',$('#i-track').value],['GPA',parseFloat($('#i-gpa').value).toFixed(2)],['Prompt',$('#i-prompt').value],['Essay',$('#i-essay').value.trim().length+' characters']];
+  $('#review-list').innerHTML=rows.map(([k,v])=>`<div><dt>${k}</dt><dd>${v||'—'}</dd></div>`).join('');
+}
+btnNext.addEventListener('click',()=>{
+  if(!validate(step)) return;
+  if(step<4){ show(step+1); return; }
+  if(!$('#i-consent').checked){ $('#consent-msg').style.display='block'; return; }
+  $('#consent-msg').style.display='none';
+  btnNext.classList.add('btn-loading');
+  setTimeout(()=>{
+    const id='TS-26-'+Array.from({length:6},()=>'ABCDEFGHJKMNPQRSTUVWXYZ23456789'[Math.random()*31|0]).join('');
+    const app={id,name:$('#i-name').value.trim(),email:$('#i-email').value.trim(),track:$('#i-track').value,ts:Date.now()};
+    try{localStorage.setItem('teslaScholarsApp',JSON.stringify(app));}catch(e){}
+    $('#app-id').textContent=id; $('#succ-email').textContent=app.email;
+    $('#form-ui').style.display='none'; $('#app-success').classList.add('show');
+    showToast('Application '+id+' received');
+  },RM?100:1300);
+});
+btnBack.addEventListener('click',()=>{ if(step>1) show(step-1); });
+$('#app-form').addEventListener('submit',e=>e.preventDefault());
+const essay=$('#i-essay'), cnt=$('#essay-count');
+essay.addEventListener('input',()=>{
+  const len=essay.value.trim().length;
+  cnt.textContent=len+' / 200 MIN'+(len>1800?' · 2000 MAX':'');
+  cnt.className='count '+(len>=200?'good':len>0?'bad':'');
+});
+try{ const saved=JSON.parse(localStorage.getItem('teslaScholarsApp')); if(saved&&saved.id){ const p=$('#app-status'); p.hidden=false; p.textContent=saved.id+' · IN REVIEW'; } }catch(e){}
+
+/* FAQ */
+$$('.faq-q').forEach(b=>b.addEventListener('click',()=>{
+  const item=b.parentElement, open=item.classList.contains('open');
+  $$('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+  if(!open){item.classList.add('open');b.setAttribute('aria-expanded','true');}
+}));
+</script>
+</body>
+</html>
